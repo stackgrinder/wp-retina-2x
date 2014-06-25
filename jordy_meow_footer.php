@@ -3,6 +3,8 @@
 	if ( !function_exists( 'jordy_meow_flattr' ) ) {
 		add_action( 'admin_head', 'jordy_meow_flattr', 1 );
 		function jordy_meow_flattr () {
+			if ( defined( 'WP_HIDE_DONATION_BUTTONS' ) && WP_HIDE_DONATION_BUTTONS == true )
+				return;
 			?>
 				<script type="text/javascript">
 					/* <![CDATA[ */
@@ -18,6 +20,8 @@
 			<?php
 		}
 		function by_jordy_meow() {
+			if ( defined( 'WP_HIDE_DONATION_BUTTONS' ) && WP_HIDE_DONATION_BUTTONS == true )
+				return;
 			echo '<div><span style="font-size: 13px; position: relative; top: -6px;">Developed by <a style="text-decoration: none;" href="https://plus.google.com/+JordyMeow">Jordy Meow</a></span>
 				<a class="FlattrButton" style="display:none;" rev="flattr;button:compact;" title="Jordy Meow / WordPress" href="http://profiles.wordpress.org/TigrouMeow/"></a></div>';
 		}
@@ -35,6 +39,8 @@
 
 	if ( !function_exists('jordy_meow_footer') ) {
 		function jordy_meow_footer() {
+			if ( defined( 'WP_HIDE_DONATION_BUTTONS' ) && WP_HIDE_DONATION_BUTTONS == true )
+				return;
 			?>
 			<div style='text-align: center;margin-top: 25px;'>
 			<p><b>This plugin is actively developed and maintained by <a href='https://plus.google.com/+JordyMeow'>Jordy Meow</a></b>.
